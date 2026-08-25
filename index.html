@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastel Project Warehouse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>" />
+</head>
+<body>
+  <div class="blob blob-a" aria-hidden="true"></div>
+  <div class="blob blob-b" aria-hidden="true"></div>
+  <div class="blob blob-c" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">♡</span>
+      <div>
+        <p class="eyebrow">Virtual studio</p>
+        <h1>Pastel Project Warehouse</h1>
+      </div>
+    </div>
+
+    <form class="search-wrap" role="search" onsubmit="return false;">
+      <label class="sr-only" for="search">Search projects</label>
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="M20 20l-3.5-3.5"></path>
+      </svg>
+      <input id="search" type="search" placeholder="Search by label, notes, or category…" autocomplete="off" />
+    </form>
+
+    <nav class="category-nav" aria-label="Project categories">
+      <a href="#crochet">Crochet</a>
+      <a href="#squishy">Squishy</a>
+      <a href="#lego">Lego</a>
+      <a href="#cardboard">Cardboard</a>
+      <a href="#extra">Extra</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="intro">
+      Keep every make in its own pastel shelf. Upload a photo, label it, and edit anytime —
+      crochet, squishies, Lego, cardboard, and extras never mix.
+    </p>
+    <p id="search-status" class="search-status" hidden></p>
+
+    <section id="crochet" class="category-section" data-category="crochet">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">🧶</span>
+        <div>
+          <h2>Crochet</h2>
+          <p>Yarn projects, amigurumi, and stitch diaries.</p>
+        </div>
+        <span class="count" data-count>0</span>
+      </header>
+      <div class="project-grid" data-grid></div>
+    </section>
+
+    <section id="squishy" class="category-section" data-category="squishy">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">🫧</span>
+        <div>
+          <h2>Squishy</h2>
+          <p>Soft, squeeze-able, and slow-rise favorites.</p>
+        </div>
+        <span class="count" data-count>0</span>
+      </header>
+      <div class="project-grid" data-grid></div>
+    </section>
+
+    <section id="lego" class="category-section" data-category="lego">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">🧱</span>
+        <div>
+          <h2>Lego</h2>
+          <p>Builds, MOCs, and brick sets of every size.</p>
+        </div>
+        <span class="count" data-count>0</span>
+      </header>
+      <div class="project-grid" data-grid></div>
+    </section>
+
+    <section id="cardboard" class="category-section" data-category="cardboard">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">📦</span>
+        <div>
+          <h2>Cardboard</h2>
+          <p>Paper crafts, boxes, and handmade structures.</p>
+        </div>
+        <span class="count" data-count>0</span>
+      </header>
+      <div class="project-grid" data-grid></div>
+    </section>
+
+    <section id="extra" class="category-section" data-category="extra">
+      <header class="section-heading">
+        <span class="section-icon" aria-hidden="true">✨</span>
+        <div>
+          <h2>Extra</h2>
+          <p>Anything that does not belong in the other shelves.</p>
+        </div>
+        <span class="count" data-count>0</span>
+      </header>
+      <div class="project-grid" data-grid></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Saved on this device · Your projects stay private in this browser</p>
+  </footer>
+
+  <dialog id="editor" class="editor" aria-labelledby="editor-title">
+    <form method="dialog" id="editor-form">
+      <h2 id="editor-title">Edit project</h2>
+      <p class="editor-category" id="editor-category"></p>
+
+      <label class="upload-box editor-upload">
+        <input id="editor-photo" type="file" accept="image/*" hidden />
+        <img id="editor-preview" alt="" hidden />
+        <span id="editor-upload-hint" class="upload-hint">
+          <strong>Replace photo</strong>
+          <em>Click or drop an image</em>
+        </span>
+      </label>
+
+      <label>
+        Label
+        <input id="editor-label" type="text" maxlength="80" required placeholder="Name this project" />
+      </label>
+      <label>
+        Notes
+        <textarea id="editor-notes" rows="4" maxlength="600" placeholder="Materials, pattern, or a little story…"></textarea>
+      </label>
+
+      <div class="editor-actions">
+        <button type="button" class="btn ghost" id="editor-cancel" value="cancel">Cancel</button>
+        <button type="submit" class="btn" id="editor-save">Save changes</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
