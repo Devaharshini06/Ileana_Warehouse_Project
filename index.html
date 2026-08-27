@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=4" />
+  <link rel="stylesheet" href="css/styles.css?v=6" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♡</text></svg>" />
 </head>
 <body>
@@ -45,7 +45,7 @@
 
   <main>
     <p class="intro">
-      Keep every make on its own pastel shelf. Upload a photo, label it, and edit anytime.
+      Keep every make on its own pastel shelf. Upload a photo or video, label it, and edit anytime.
       Add your own categories below — they never mix with the others.
     </p>
 
@@ -150,14 +150,16 @@
       <h2 id="editor-title">Edit project</h2>
       <p class="editor-category" id="editor-category"></p>
 
-      <label class="upload-box editor-upload">
-        <input id="editor-photo" type="file" accept="image/*" hidden />
+      <div class="upload-box editor-upload" id="editor-upload-box">
+        <input id="editor-photo" type="file" accept="image/*,video/*,.mp4,.m4v,.webm,.mov,.qt,.ogv,.ogg,.avi,.mkv,.3gp" hidden />
         <img id="editor-preview" alt="" hidden />
+        <video id="editor-video-preview" hidden controls playsinline preload="metadata"></video>
         <span id="editor-upload-hint" class="upload-hint">
-          <strong>Replace photo</strong>
-          <em>Click or drop an image</em>
+          <strong>Replace photo or video</strong>
+          <em>MP4 or WebM works best · 5–10 min clips are OK</em>
         </span>
-      </label>
+      </div>
+      <p id="editor-media-error" class="upload-status error" hidden></p>
 
       <label>
         Label
@@ -205,6 +207,6 @@
     </form>
   </dialog>
 
-  <script src="js/app.js?v=4"></script>
+  <script src="js/app.js?v=6"></script>
 </body>
 </html>

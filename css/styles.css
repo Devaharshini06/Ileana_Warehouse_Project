@@ -376,11 +376,13 @@ main {
   background: #ffd6ea;
 }
 
-.upload-box img {
+.upload-box img,
+.upload-box video {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 12px;
+  background: #3a1024;
 }
 
 .upload-hint {
@@ -391,6 +393,29 @@ main {
 
 .upload-hint strong {
   color: var(--rose-dark);
+}
+
+.upload-status {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--rose-dark);
+}
+
+.upload-status.error {
+  color: #e0486a;
+}
+
+.media-note {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
 }
 
 .upload-card input[type="text"],
@@ -439,12 +464,17 @@ main {
 }
 
 .project-card img,
+.project-card video,
 .project-card .photo-fallback {
   width: 100%;
   height: 170px;
   object-fit: cover;
   border-radius: 16px;
   background: #ffd6ea;
+}
+
+.project-card video {
+  background: #3a1024;
 }
 
 .photo-fallback {
@@ -504,7 +534,8 @@ main {
   min-height: 180px;
 }
 
-.editor-upload img {
+.editor-upload img,
+.editor-upload video {
   height: 180px;
 }
 
